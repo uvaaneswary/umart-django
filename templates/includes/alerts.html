@@ -1,0 +1,14 @@
+
+<!--Got this from django documentation-->
+{% if messages %}
+    {% for message in messages %}   
+    <div id="message" class="container">   <!--the message id will be used in json file for the error messages to gone automatically-->
+    <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role = "alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Warning: {% endif %}
+            {{ message }}
+    </div>
+    </div>
+    {% endfor %}
+{% endif %}
+<!--Took till here (django documentation)-->

@@ -1,0 +1,11 @@
+
+{% autoescape off %}  <!--is to protect you from cross site forgery-->
+
+Hi {{user.first_name}},
+
+Please click on below link to confirm your registration.
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}  <!--when you click the link, the token automatically get expired. It cannot be used again and again. Only one time use.-->
+
+If you think it's not you, please ignore this email.
+
+{% endautoescape %}
